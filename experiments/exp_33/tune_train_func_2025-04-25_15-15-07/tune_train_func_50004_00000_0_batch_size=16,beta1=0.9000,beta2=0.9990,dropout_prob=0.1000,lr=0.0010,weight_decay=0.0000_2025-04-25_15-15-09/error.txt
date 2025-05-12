@@ -1,0 +1,19 @@
+Failure # 1 (occurred at 2025-04-25_15-15-12)
+[36mray::ImplicitFunc.train()[39m (pid=54336, ip=10.33.20.59, actor_id=45f1331d3aa2255fbc8bda2801000000, repr=tune_train_func)
+  File "/home/shyam/PycharmProjects/Softmax/.venv/lib/python3.10/site-packages/ray/tune/trainable/trainable.py", line 330, in train
+    raise skipped from exception_cause(skipped)
+  File "/home/shyam/PycharmProjects/Softmax/.venv/lib/python3.10/site-packages/ray/air/_internal/util.py", line 107, in run
+    self._ret = self._target(*self._args, **self._kwargs)
+  File "/home/shyam/PycharmProjects/Softmax/.venv/lib/python3.10/site-packages/ray/tune/trainable/function_trainable.py", line 45, in <lambda>
+    training_func=lambda: self._trainable_func(self.config),
+  File "/home/shyam/PycharmProjects/Softmax/.venv/lib/python3.10/site-packages/ray/tune/trainable/function_trainable.py", line 261, in _trainable_func
+    output = fn()
+  File "/home/shyam/PycharmProjects/Softmax/train.py", line 89, in tune_train_func
+    model = SoftmaxApprox(input_dim, hidden_dims, dropout_prob=config["dropout_prob"])
+  File "/home/shyam/PycharmProjects/Softmax/models.py", line 33, in __init__
+    self.feature_extractor = nn.Sequential(*layers, nn.Conv3d(self.in_dim[3],channel_dim,kernel_size=1), nn.ReLU(), Norm())
+  File "/home/shyam/PycharmProjects/Softmax/.venv/lib/python3.10/site-packages/torch/nn/modules/conv.py", line 692, in __init__
+    super().__init__(
+  File "/home/shyam/PycharmProjects/Softmax/.venv/lib/python3.10/site-packages/torch/nn/modules/conv.py", line 108, in __init__
+    if out_channels % groups != 0:
+TypeError: unsupported operand type(s) for %: 'tuple' and 'int'

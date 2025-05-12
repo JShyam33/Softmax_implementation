@@ -1,0 +1,19 @@
+Failure # 1 (occurred at 2025-04-25_15-05-25)
+[36mray::ImplicitFunc.train()[39m (pid=52117, ip=10.33.20.59, actor_id=8a03d79d9464720463ee1df301000000, repr=tune_train_func)
+  File "/home/shyam/PycharmProjects/Softmax/.venv/lib/python3.10/site-packages/ray/tune/trainable/trainable.py", line 330, in train
+    raise skipped from exception_cause(skipped)
+  File "/home/shyam/PycharmProjects/Softmax/.venv/lib/python3.10/site-packages/ray/air/_internal/util.py", line 107, in run
+    self._ret = self._target(*self._args, **self._kwargs)
+  File "/home/shyam/PycharmProjects/Softmax/.venv/lib/python3.10/site-packages/ray/tune/trainable/function_trainable.py", line 45, in <lambda>
+    training_func=lambda: self._trainable_func(self.config),
+  File "/home/shyam/PycharmProjects/Softmax/.venv/lib/python3.10/site-packages/ray/tune/trainable/function_trainable.py", line 261, in _trainable_func
+    output = fn()
+  File "/home/shyam/PycharmProjects/Softmax/train.py", line 108, in tune_train_func
+    outputs = model(x)
+  File "/home/shyam/PycharmProjects/Softmax/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/shyam/PycharmProjects/Softmax/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/shyam/PycharmProjects/Softmax/models.py", line 38, in forward
+    x = self.feature_extractor(x.reshape((*self.in_dim, -1)))
+TypeError: Value after * must be an iterable, not int
