@@ -38,7 +38,7 @@ def calculate_metrics(pred, targets):
 # Set device and load the best saved model.
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 # Replace "tuner.pkl" with the correct path to your saved model checkpoint file if needed.
-model = torch.load("exp_model.pth", map_location=device,weights_only=False)
+model = torch.load("exp_model_0_986345_10.pth", map_location=device, weights_only=False)
 
 model.to(device)
 model.eval()

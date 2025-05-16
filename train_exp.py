@@ -123,8 +123,8 @@ def tune_train_func(config, checkpoint_dir=None):
             # If current r2 is the best, save a checkpoint
             if r2 > best_r2:
                 best_r2 = r2
-                torch.save(model,"exp_model.pth")
-                torch.save(model.state_dict(), "exp_weights.pth")
+                torch.save(model, "exp_model_0_986345_10.pth")
+                torch.save(model.state_dict(), "exp_weights_0_986345_10.pth")
 
             print(f"Epoch {epoch + 1}/{epochs} -- Loss: {loss.item():.6f}, R²: {r2:.6f}, MSE: {mse:.6f}, RMSE: {rmse:.6f}, MAE: {mae:.6f}")
             tune.report(metrics=metrics_dict)
